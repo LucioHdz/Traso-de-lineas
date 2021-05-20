@@ -64,7 +64,7 @@ class Bresenham:
         self.y2 = y2
 
     def print_chart(self):
-        """Algoritmo DDA retorna 2 listas con los puntos cartecianos"""
+        """Algoritmo Bresenham retorna 2 listas con los puntos cartecianos"""
         x = self.x1
         y = self.y1
 
