@@ -1,18 +1,33 @@
 from bokeh.core.enums import SizingMode
-from model.algorithms import DDA
+from model.algorithms import DDA,Bresenham
 from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Spectral6
 from bokeh.transform import linear_cmap
 
 
+
+menu = """
+        1)Bresenham
+
+        2)DDA
+
+        Ingresa una opción:
+        --> """
+
 if __name__=='__main__':
+    print(menu,end=None)
+
+    dato = int(input())
     x = int(input('Ingrese x1:'))
     y = int(input('Ingrese y1:'))
     
     x2 = int(input('Ingrese x2:'))
     y2 = int(input('Ingrese y2:'))
 
-    obj = DDA(x,y,x2,y2)
+    if dato==1:
+        obj = Bresenham(x,y,x2,y2)
+    else:
+        obj = DDA(x,y,x2,y2)
 
     (x_vars,y_vars)=obj.print_chart()
 

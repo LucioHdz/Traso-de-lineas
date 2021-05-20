@@ -28,12 +28,9 @@ class DDA:
         self.y2 = y2
 
 
-    def crd (self,start_point,finish_point, increment):
-        list_of_points=[round(j) for j in range(start_point,finish_point,increment)]
-        return list_of_points
-
 
     def print_chart(self):
+        """Algoritmo DDA retorna 2 listas con los puntos cartecianos"""
         dx = abs(self.x2-self.x1)
         dy = abs(self.y2-self.y1)
         steps = 0
@@ -59,4 +56,30 @@ class DDA:
             y_vars.append(n)
         return x_vars,y_vars
 
-       
+class Bresenham:
+    def __init__(self,x1,y1,x2,y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+
+    def print_chart(self):
+        """Algoritmo DDA retorna 2 listas con los puntos cartecianos"""
+        x = self.x1
+        y = self.y1
+
+        dx = abs(self.x2 -x)
+        dy = abs(self.y2 -y)
+        p = 2 * dy -dx
+        x_vars=[]
+        y_vars=[]
+        while x <= self.x2:
+            x_vars.append(x)
+            y_vars.append(y)
+            x += 1
+            if p<0:
+                p = p + 2 * dy
+            else:
+                p = p + (2 * dy) - (2 * dx)
+                y += 1
+        return x_vars,y_vars
