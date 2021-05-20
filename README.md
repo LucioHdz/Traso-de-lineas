@@ -1,6 +1,5 @@
 # Requisitos
 -  bokeh
-`python -m venv venv`
 
 ## Entorno virtual
 - `python -m venv venv`
